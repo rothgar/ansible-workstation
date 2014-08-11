@@ -1,0 +1,9 @@
+---
+packages:
+  - gdebi
+  - openssh-server
+  - vim
+  - zsh
+  - git
+
+apt_file: /etc/apt/sources.list.d/google-chrome.list

@@ -1,0 +1,5 @@
+---
+# roles/nas/vars/main.yml
+packages:
+  - samba
+  - greyhole
