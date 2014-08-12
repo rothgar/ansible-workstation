@@ -5,5 +5,11 @@ packages:
   - vim
   - zsh
   - git
+  - build-essential
+  - tmux
+  - vlc
+  - htop
+  - ncdu
+  - glances
 
 apt_file: /etc/apt/sources.list.d/google-chrome.list

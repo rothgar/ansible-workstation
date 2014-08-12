@@ -1,9 +1,15 @@
 ---
 # roles/common/tasks/main.yml
 
+- name: Update and upgrade system
+  apt: upgrade=dist update_cache=yes
+
 - name: Install common packages
   apt: name={{ item }} state=installed
   with_items: packages
+
+- name: Install sysdig
+  include: sysdig.yml
 
 - name: Install Chrome
   include: chrome.yml
