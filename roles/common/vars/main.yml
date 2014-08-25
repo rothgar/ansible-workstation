@@ -1,5 +1,5 @@
 ---
-packages:
+apt-packages:
   - gdebi
   - openssh-server
   - vim
@@ -11,5 +11,8 @@ packages:
   - htop
   - ncdu
   - glances
+
+pip-packages:
+    - beets
 
 apt_file: /etc/apt/sources.list.d/google-chrome.list
