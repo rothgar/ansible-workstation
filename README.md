@@ -1,4 +1,7 @@
 ansible-ubuntu
 ==============
 
-ansible playbook for setting up a ubuntu desktop + greyhole samba shares
+Ansible playbook for setting up an ubuntu desktop.
+
+Add desired software installs to roles/common/vars/main.yml
+

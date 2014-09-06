@@ -9,10 +9,15 @@ apt-packages:
   - tmux
   - vlc
   - htop
+  - iotop
   - ncdu
   - glances
 
 pip-packages:
-    - beets
+  - beets
+
+ppas:
+  - ppa:team-xbmc/ppa
+  - ppa:rquillo/ansible
 
 apt_file: /etc/apt/sources.list.d/google-chrome.list

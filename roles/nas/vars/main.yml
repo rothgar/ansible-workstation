@@ -1,7 +1,0 @@
----
-# roles/nas/vars/main.yml
-packages:
-  - samba
-  - greyhole
-  - system-config-samba
-  - cifs-utils
