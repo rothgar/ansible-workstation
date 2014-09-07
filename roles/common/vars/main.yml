@@ -24,4 +24,9 @@ ppas:
   - ppa:team-xbmc/ppa
   - ppa:rquillo/ansible
 
-apt_file: /etc/apt/sources.list.d/google-chrome.list
+"apt_file": "/etc/apt/sources.list.d/google-chrome.list"
+
+"dotfiles": {
+  "repo": "https://github.com/rothgar/dotfiles.git",
+  "host": "www.github.com",
+}

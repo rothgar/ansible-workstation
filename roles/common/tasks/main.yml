@@ -24,6 +24,10 @@
   pip: name={{ item }} state=present
   with_items: pip_packages
 
+- name: Clone my dotfiles
+  git: repo={{ dotfiles.repo }} dest=~/.dotfiles
+    recursive=yes accept_hostkey=yes
+
 - name: Install sysdig
   include: sysdig.yml
 
