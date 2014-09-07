@@ -1,5 +1,5 @@
 ---
-apt-packages:
+apt_packages:
   - gdebi
   - openssh-server
   - vim
@@ -15,13 +15,13 @@ apt-packages:
   - dkms # virtualbox req
   - virtualbox-4.3
   - handbrake
+  - python-setuptools
 
-pip-packages:
+pip_packages:
   - beets
 
 ppas:
   - ppa:team-xbmc/ppa
   - ppa:rquillo/ansible
-  - ppa:stebbins/handbrake-releases
 
 apt_file: /etc/apt/sources.list.d/google-chrome.list
