@@ -12,6 +12,9 @@ apt-packages:
   - iotop
   - ncdu
   - glances
+  - dkms # virtualbox req
+  - virtualbox-4.3
+  - handbrake
 
 pip-packages:
   - beets
@@ -19,5 +22,6 @@ pip-packages:
 ppas:
   - ppa:team-xbmc/ppa
   - ppa:rquillo/ansible
+  - ppa:stebbins/handbrake-releases
 
 apt_file: /etc/apt/sources.list.d/google-chrome.list

@@ -3,4 +3,3 @@
   sudo: True
   roles:
     - common
-    - nas
