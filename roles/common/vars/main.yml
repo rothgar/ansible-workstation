@@ -16,6 +16,9 @@ apt_packages:
   - virtualbox-4.3
   - handbrake
   - python-setuptools
+  - remmina
+  - remmina-plugin-gnome
+  - ansible
 
 pip_packages:
   - beets
