@@ -17,6 +17,9 @@ apt_packages:
   - handbrake
   - python-setuptools
   - autokey-gtk
+  - remmina
+  - remmina-plugin-gnome
+  - ansible
 
 pip_packages:
   - beets
