@@ -16,6 +16,7 @@ apt_packages:
   - virtualbox-4.3
   - handbrake
   - python-setuptools
+  - autokey-gtk
 
 pip_packages:
   - beets

@@ -13,7 +13,7 @@
 - apt_key: url=http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc state=present
 
 - name: Install common packages
-  apt: name={{ item }} state=installed
+  apt: name={{ item }} state=installed force=yes
   with_items: apt_packages
 
 - name: Install pip (if needed)
