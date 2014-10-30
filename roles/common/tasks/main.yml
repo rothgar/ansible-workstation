@@ -2,15 +2,19 @@
 # roles/common/tasks/main.yml
 
 - name: Update and upgrade system
-  apt: upgrade=dist update_cache=yes
+  apt: upgrade=yes update_cache=yes
+  ignore_errors: yes
 
 - name: Add repos and ppas
   apt_repository: repo={{ item }}
   with_items: ppas
+  ignore_errors: yes
 
 - name: add virtualbox repo and key
   apt_repository: repo="deb http://download.virtualbox.org/virtualbox/debian {{ ansible_distribution_release }} contrib"
+  when: ansible_distribution_version == "14.04"
 - apt_key: url=http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc state=present
+  when: ansible_distribution_version == "14.04"
 
 - name: Install common packages
   apt: name={{ item }} state=installed force=yes
@@ -30,6 +34,7 @@
 
 - name: Install sysdig
   include: sysdig.yml
+  when: ansible_distribution_version == "14.04"
 
 - name: Install Chrome
   include: chrome.yml

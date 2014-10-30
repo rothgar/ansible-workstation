@@ -10,6 +10,7 @@ apt_packages:
   - vlc
   - htop
   - iotop
+  - irssi
   - ncdu
   - glances
   - dkms # virtualbox req
@@ -25,8 +26,6 @@ pip_packages:
   - beets
 
 ppas:
-  - ppa:team-xbmc/ppa
-  - ppa:rquillo/ansible
 
 "apt_file": "/etc/apt/sources.list.d/google-chrome.list"
 
