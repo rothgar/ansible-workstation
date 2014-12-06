@@ -21,15 +21,14 @@ apt_packages:
   - remmina
   - remmina-plugin-gnome
   - ansible
+  - xclip
 
 pip_packages:
   - beets
 
-ppas:
+apt_file: "/etc/apt/sources.list.d/google-chrome.list"
 
-"apt_file": "/etc/apt/sources.list.d/google-chrome.list"
-
-"dotfiles": {
+dotfiles: {
   "repo": "https://github.com/rothgar/dotfiles.git",
   "host": "www.github.com",
 }
