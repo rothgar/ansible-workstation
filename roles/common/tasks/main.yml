@@ -28,6 +28,10 @@
   pip: name={{ item }} state=present
   with_items: pip_packages
 
+- name: Check hard drive temps
+  command: hddtemp -S 60 /dev/{{ item }}
+  with_items: ansible_devices.keys()
+
 - name: Clone my dotfiles
   git: repo={{ dotfiles.repo }} dest=~/.dotfiles
     recursive=yes accept_hostkey=yes
