@@ -27,6 +27,9 @@ apt_packages:
 pip_packages:
   - beets
 
+gem_packages:
+  - tmuxinator
+
 apt_file: "/etc/apt/sources.list.d/google-chrome.list"
 
 dotfiles: {
