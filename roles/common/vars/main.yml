@@ -14,7 +14,7 @@ apt_packages:
   - ncdu
   - glances
   - dkms # virtualbox req
-  - virtualbox-4.3
+  - virtualbox
   - handbrake
   - python-setuptools
   - autokey-gtk
@@ -23,6 +23,7 @@ apt_packages:
   - ansible
   - xclip
   - hddtemp
+  - weechat
 
 pip_packages:
   - beets
