@@ -57,3 +57,6 @@
 
 - name: Install Chrome
   include: chrome.yml
+
+- name: Install Docker
+  include: docker.yml
