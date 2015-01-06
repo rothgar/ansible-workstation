@@ -37,7 +37,7 @@
   with_items: ansible_devices.keys()
 
 - name: Clone my dotfiles
-  git: repo={{ dotfiles.repo }} dest=~/.dotfiles
+  git: repo={{ dotfiles.repo }} dest=/home/{{ ansible_user_id }}/.dotfiles
     recursive=yes accept_hostkey=yes
 
 - name: Install sysdig
