@@ -45,11 +45,11 @@
 
 - name: Create zprezto symlinks
   shell: /home/{{ ansible_user_id }}/.dotfiles/init/zprezto-install.sh
-  creates: /home/{{ ansible_user_id }}/.dotfiles/src/.zshrc
+    creates=/home/{{ ansible_user_id }}/.dotfiles/src/.zshrc
 
 - name: Create dotfiles symlinks
   shell: /home/{{ ansible_user_id }}/.dotfiles/init/dotfiles-install.sh
-  creates: /home/{{ ansible_user_id }}/.zshenv
+    creates=/home/{{ ansible_user_id }}/.zshenv
   
 - name: Install sysdig
   include: sysdig.yml
