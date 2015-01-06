@@ -24,6 +24,7 @@ apt_packages:
   - xclip
   - hddtemp
   - weechat
+  - curl
 
 pip_packages:
   - beets
