@@ -40,6 +40,17 @@
   git: repo={{ dotfiles.repo }} dest=/home/{{ ansible_user_id }}/.dotfiles
     recursive=yes accept_hostkey=yes
 
+- name: Change user shell to zsh
+  shell: chsh -s /usr/bin/zsh {{ ansible_user_id }}
+
+- name: Create zprezto symlinks
+  shell: /home/{{ ansible_user_id }}/.dotfiles/init/zprezto-install.sh
+  creates: /home/{{ ansible_user_id }}/.dotfiles/src/.zshrc
+
+- name: Create dotfiles symlinks
+  shell: /home/{{ ansible_user_id }}/.dotfiles/init/dotfiles-install.sh
+  creates: /home/{{ ansible_user_id }}/.zshenv
+  
 - name: Install sysdig
   include: sysdig.yml
   when: ansible_distribution_version == "14.04"
