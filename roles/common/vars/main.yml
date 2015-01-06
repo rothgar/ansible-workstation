@@ -25,6 +25,7 @@ apt_packages:
   - hddtemp
   - weechat
   - curl
+  - tree
 
 pip_packages:
   - beets
