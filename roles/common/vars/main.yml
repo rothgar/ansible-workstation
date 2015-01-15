@@ -1,34 +1,36 @@
 ---
 apt_packages:
-  - gdebi
-  - openssh-server
-  - vim
-  - zsh
-  - git
+  - ansible
+  - autokey-gtk
   - build-essential
-  - tmux
-  - vlc
+  - curl
+  - dkms # virtualbox req
+  - gdebi
+  - git
+  - glances
+  - handbrake
+  - hddtemp
   - htop
   - iotop
   - irssi
   - ncdu
-  - glances
-  - dkms # virtualbox req
-  - virtualbox
-  - handbrake
+  - openssh-server
+  - pv
   - python-setuptools
-  - autokey-gtk
   - remmina
   - remmina-plugin-gnome
-  - ansible
-  - xclip
-  - hddtemp
-  - weechat
-  - curl
+  - tmux
   - tree
+  - vim
+  - virtualbox
+  - vlc
+  - weechat
+  - xclip
+  - zsh
 
 pip_packages:
   - beets
+  - mps-youtube
 
 gem_packages:
   - tmuxinator
