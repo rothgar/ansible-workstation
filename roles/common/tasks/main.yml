@@ -10,19 +10,12 @@
   with_items: ppas
   ignore_errors: yes
 
-- name: add virtualbox repo and key
-  apt_repository: repo="deb http://download.virtualbox.org/virtualbox/debian {{ ansible_distribution_release }} contrib"
-  when: ansible_distribution_version == "14.04"
-- apt_key: url=http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc state=present
-  when: ansible_distribution_version == "14.04"
-
 - name: Install apt packages
   apt: name={{ item }} state=installed force=yes
   with_items: apt_packages
 
 - name: Install pip (if needed)
-  shell: easy_install pip
-  ignore_errors: yes
+  easy_install: name=pip
 
 - name: Install pip packages
   pip: name={{ item }} state=latest
@@ -51,10 +44,6 @@
   shell: /home/{{ ansible_user_id }}/.dotfiles/init/dotfiles-install.sh
     creates=/home/{{ ansible_user_id }}/.zshenv
   
-- name: Install sysdig
-  include: sysdig.yml
-  when: ansible_distribution_version == "14.04"
-
 - name: Install Chrome
   include: chrome.yml
 
