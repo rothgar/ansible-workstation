@@ -4,7 +4,6 @@ apt_packages:
   - autokey-gtk
   - build-essential
   - curl
-  - dkms # virtualbox req
   - gdebi
   - git
   - glances
@@ -24,7 +23,6 @@ apt_packages:
   - tmux
   - tree
   - vim
-  - virtualbox
   - vlc
   - weechat
   - xclip
