@@ -6,3 +6,5 @@
     - "roles/common/vars/{{ ansible_distribution_version }}.yml"
   roles:
     - common
+    - { role: valentinogagliardi.sysdig, tags: ["sysdig"] }
+    - { role: "azavea.virtualbox" }

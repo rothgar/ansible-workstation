@@ -16,6 +16,8 @@ apt_packages:
   - ncdu
   - openssh-server
   - pv
+  - glances
+  - handbrake
   - python-setuptools
   - remmina
   - remmina-plugin-gnome
