@@ -19,6 +19,7 @@ apt_packages:
   - python-setuptools
   - remmina
   - remmina-plugin-gnome
+  - sshfs
   - tmux
   - tree
   - vim
