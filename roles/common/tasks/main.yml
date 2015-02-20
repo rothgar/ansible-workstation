@@ -3,6 +3,7 @@
 
 - name: Update and upgrade system
   apt: upgrade=yes update_cache=yes
+  tags: update
   ignore_errors: yes
 
 - name: Add repos and ppas
