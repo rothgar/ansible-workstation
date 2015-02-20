@@ -31,6 +31,7 @@ apt_packages:
 pip_packages:
   - beets
   - mps-youtube
+  - virtualenv
 
 gem_packages:
   - tmuxinator
