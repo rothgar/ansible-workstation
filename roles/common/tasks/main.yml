@@ -31,19 +31,20 @@
   with_items: ansible_devices.keys()
 
 - name: Clone my dotfiles
-  git: repo={{ dotfiles.repo }} dest=/home/{{ ansible_user_id }}/.dotfiles
+  git: repo={{ dotfiles.repo }} dest=/home/{{ ansible_ssh_user }}/.dotfiles
     recursive=yes accept_hostkey=yes
 
 - name: Change user shell to zsh
-  shell: chsh -s /usr/bin/zsh {{ ansible_user_id }}
+  shell: chsh -s /usr/bin/zsh {{ ansible_ssh_id }}
+  sudo: no
 
 - name: Create zprezto symlinks
-  shell: /home/{{ ansible_user_id }}/.dotfiles/init/zprezto-install.sh
-    creates=/home/{{ ansible_user_id }}/.dotfiles/src/.zshrc
+  shell: /home/{{ ansible_ssh_id }}/.dotfiles/init/zprezto-install.sh
+    creates=/home/{{ ansible_ssh_id }}/.dotfiles/src/.zshrc
 
 - name: Create dotfiles symlinks
-  shell: /home/{{ ansible_user_id }}/.dotfiles/init/dotfiles-install.sh
-    creates=/home/{{ ansible_user_id }}/.zshenv
+  shell: /home/{{ ansible_ssh_id }}/.dotfiles/init/dotfiles-install.sh
+    creates=/home/{{ ansible_ssh_id }}/.zshenv
   
 - name: Install Chrome
   include: chrome.yml
