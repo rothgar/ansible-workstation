@@ -32,7 +32,8 @@
 
 - name: Clone my dotfiles
   git: repo={{ dotfiles.repo }} dest=/home/{{ ansible_ssh_user }}/.dotfiles
-    recursive=yes accept_hostkey=yes
+    recursive=yes accept_hostkey=yes update=yes
+  sudo: no
 
 - name: Change user shell to zsh
   shell: chsh -s /usr/bin/zsh {{ ansible_ssh_id }}
