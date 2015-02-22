@@ -36,16 +36,15 @@
   sudo: no
 
 - name: Change user shell to zsh
-  shell: chsh -s /usr/bin/zsh {{ ansible_ssh_id }}
-  sudo: no
+  shell: chsh -s /usr/bin/zsh {{ ansible_ssh_user }}
 
 - name: Create zprezto symlinks
-  shell: /home/{{ ansible_ssh_id }}/.dotfiles/init/zprezto-install.sh
-    creates=/home/{{ ansible_ssh_id }}/.dotfiles/src/.zshrc
+  shell: /home/{{ ansible_ssh_user }}/.dotfiles/init/zprezto-install.sh
+    creates=/home/{{ ansible_ssh_user }}/.dotfiles/src/.zshrc
 
 - name: Create dotfiles symlinks
-  shell: /home/{{ ansible_ssh_id }}/.dotfiles/init/dotfiles-install.sh
-    creates=/home/{{ ansible_ssh_id }}/.zshenv
+  shell: /home/{{ ansible_ssh_user }}/.dotfiles/init/dotfiles-install.sh
+    creates=/home/{{ ansible_ssh_user }}/.zshenv
   
 - name: Install Chrome
   include: chrome.yml
