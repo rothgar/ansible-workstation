@@ -8,3 +8,4 @@
     - common
     - { role: valentinogagliardi.sysdig, tags: ["sysdig"] }
     - { role: "azavea.virtualbox" }
+    - { role: "angstwad.docker_ubuntu" }
