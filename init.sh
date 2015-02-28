@@ -5,7 +5,7 @@ REPO="git@github.com:rothgar/ansible-workstation.git"
 yum install -y ansible git zsh
 
 # clone this repo
-mkdir -p "${HOME}/src
-git clone "${REPO}" "${HOME}"/src/ansible-workstation 
+mkdir -p /home/"${SUDO_USER}/src
+git clone "${REPO}" /home/"${SUDO_USER}"/src/ansible-workstation 
 
-ansible-playbook "${HOME}"/src/ansible-workstation/main.yml
+ansible-playbook /home/"${SUDO_USER}"/src/ansible-workstation/main.yml
