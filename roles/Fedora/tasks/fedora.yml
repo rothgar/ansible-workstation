@@ -1,0 +1,20 @@
+---
+# roles/common/tasks/fedora.yml
+
+- name: Update and upgrade system
+  yum: upgrade=yes
+  tags: update
+  ignore_errors: yes
+
+- name: Install yum packages
+  yum: name={{ item }} state=latest
+  with_items: yum_packages
+
+- name: Change user shell to zsh
+  shell: chsh -s /usr/bin/zsh {{ ansible_ssh_user }}
+  sudo: no
+
+- name: Install gem packages
+  gem: name={{ item }} state=latest
+  with_items: gem_packages
+

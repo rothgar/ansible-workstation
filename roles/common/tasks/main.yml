@@ -1,19 +1,24 @@
 ---
 # roles/common/tasks/main.yml
 
-- name: Update and upgrade system
-  apt: upgrade=yes update_cache=yes
-  tags: update
-  ignore_errors: yes
+- name: Clone my dotfiles
+  git: repo={{ dotfiles.repo }} dest=/home/{{ ansible_env.SUDO_USER }}/.dotfiles
+    recursive=yes accept_hostkey=yes update=yes track_submodules=yes
+  sudo: no
 
-- name: Add repos and ppas
-  apt_repository: repo={{ item }}
-  with_items: ppas
-  ignore_errors: yes
+- name: Set dotfiles ownership
+  file: path=/home/{{ ansible_env.SUDO_USER }}/.dotfiles recurse=yes
+    owner={{ ansible_env.SUDO_USER }} group={{ ansible_env.SUDO_USER }}
 
-- name: Install apt packages
-  apt: name={{ item }} state=installed force=yes
-  with_items: apt_packages
+- name: Create zprezto symlinks
+  shell: /home/{{ ansible_env.SUDO_USER }}/.dotfiles/init/zprezto-install.sh
+    creates=/home/{{ ansible_env.SUDO_USER }}/.dotfiles/src/.zshrc
+  sudo: no
+
+- name: Create dotfiles symlinks
+  shell: /home/{{ ansible_env.SUDO_USER }}/.dotfiles/init/dotfiles-install.sh
+    creates=/home/{{ ansible_env.SUDO_USER }}/.zshenv
+  sudo: no
 
 - name: Install pip (if needed)
   easy_install: name=pip
@@ -21,33 +26,4 @@
 - name: Install pip packages
   pip: name={{ item }} state=latest
   with_items: pip_packages
-  
-- name: Install gem packages
-  gem: name={{ item }} state=latest
-  with_items: gem_packages
 
-- name: Check hard drive temps
-  command: hddtemp -S 60 /dev/{{ item }}
-  with_items: ansible_devices.keys()
-
-- name: Clone my dotfiles
-  git: repo={{ dotfiles.repo }} dest=/home/{{ ansible_ssh_user }}/.dotfiles
-    recursive=yes accept_hostkey=yes update=yes
-  sudo: no
-
-- name: Change user shell to zsh
-  shell: chsh -s /usr/bin/zsh {{ ansible_ssh_user }}
-
-- name: Create zprezto symlinks
-  shell: /home/{{ ansible_ssh_user }}/.dotfiles/init/zprezto-install.sh
-    creates=/home/{{ ansible_ssh_user }}/.dotfiles/src/.zshrc
-
-- name: Create dotfiles symlinks
-  shell: /home/{{ ansible_ssh_user }}/.dotfiles/init/dotfiles-install.sh
-    creates=/home/{{ ansible_ssh_user }}/.zshenv
-  
-- name: Install Chrome
-  include: chrome.yml
-
-- name: Install Docker
-  include: docker.yml

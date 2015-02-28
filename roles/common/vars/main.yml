@@ -8,6 +8,6 @@ gem_packages:
   - tmuxinator
 
 dotfiles: {
-  "repo": "git@github.com:rothgar/dotfiles.git",
+  "repo": "https://github.com/rothgar/dotfiles.git",
   "host": "www.github.com",
 }
