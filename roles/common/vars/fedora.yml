@@ -1,0 +1,31 @@
+---
+yum_packages:
+  - ansible
+  - autokey-gtk
+  - build-essential
+  - curl
+  - dconf-editor
+  - gdebi
+  - git
+  - glances
+  - gnome-tweak-tool
+  - handbrake
+  - hddtemp
+  - htop
+  - iotop
+  - ncdu
+  - openssh-server
+  - pv
+  - glances
+  - handbrake
+  - python-setuptools
+  - remmina
+  - remmina-plugin-gnome
+  - sshfs
+  - tmux
+  - tree
+  - vim
+  - vlc
+  - weechat
+  - xclip
+  - zsh
