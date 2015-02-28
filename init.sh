@@ -1,8 +1,8 @@
 #!/bin/bash
 REPO="git@github.com:rothgar/ansible-workstation.git"
 
-# install ansible
-yum install -y ansible
+# install initial packages
+yum install -y ansible git zsh
 
 # clone this repo
 mkdir -p "${HOME}/src
