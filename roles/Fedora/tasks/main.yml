@@ -2,7 +2,7 @@
 # roles/common/tasks/fedora.yml
 
 - name: Update and upgrade system
-  yum: upgrade=yes
+  yum: name=* state=latest
   tags: update
   ignore_errors: yes
 

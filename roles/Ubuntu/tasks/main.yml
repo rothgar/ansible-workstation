@@ -19,10 +19,3 @@
   command: hddtemp -S 60 /dev/{{ item }}
   with_items: ansible_devices.keys()
   
-- name: Install Chrome
-  include: chrome.yml
-  when: ansible_distribution == 'ubuntu'_
-
-- name: Install Docker
-  include: docker.yml
-  when: ansible_distribution == 'ubuntu'_
