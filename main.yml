@@ -3,7 +3,7 @@
   sudo: True
   vars_files:
     - "roles/common/vars/main.yml"
-    - "roles/{{ ansible_distribution }}/vars/{{ ansible_distribution_version }}.yml
+    - "roles/{{ ansible_distribution }}/vars/{{ ansible_distribution_version }}.yml"
   roles:
     - common
     - { role: Fedora, when: "ansible_distribution == 'Fedora'" }
