@@ -4,9 +4,11 @@ apt_packages:
   - autokey-gtk
   - build-essential
   - curl
+  - dconf-editor
   - gdebi
   - git
   - glances
+  - gnome-tweak-tool
   - handbrake
   - hddtemp
   - htop
