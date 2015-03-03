@@ -14,7 +14,7 @@ yum_packages:
   - gstreamer1-plugins-good 
   - gstreamer-plugins-bad-free 
   - gstreamer-plugin-crystalhd 
-  - gstreamer-vaapi
+  - gstreamer1-vaapi
   - hddtemp
   - htop
   - iotop
