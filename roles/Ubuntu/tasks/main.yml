@@ -1,11 +1,6 @@
 ---
 # roles/common/tasks/ubuntu.yml
 
-- name: Update and upgrade system
-  apt: upgrade=yes update_cache=yes
-  tags: update
-  ignore_errors: yes
-
 - name: Add repos and ppas
   apt_repository: repo={{ item }}
   with_items: ppas
@@ -14,6 +9,11 @@
 - name: Install apt packages
   apt: name={{ item }} state=installed force=yes
   with_items: apt_packages
+
+- name: Update and upgrade system
+  apt: upgrade=yes update_cache=yes
+  tags: update
+  ignore_errors: yes
 
 - name: Check hard drive temps
   command: hddtemp -S 60 /dev/{{ item }}
