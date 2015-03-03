@@ -1,5 +1,7 @@
 ---
 yum_packages:
+  - http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_distribution_version }}.noarch.rpm
+  - http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_distribution_version }}.noarch.rpm
   - ansible
   - autokey-gtk
   - curl
@@ -7,6 +9,12 @@ yum_packages:
   - git
   - glances
   - gnome-tweak-tool
+  - gstreamer1-libav
+  - gstreamer1-plugins-bad-freeworld 
+  - gstreamer1-plugins-good 
+  - gstreamer-plugins-bad-free 
+  - gstreamer-plugin-crystalhd 
+  - gstreamer-vaapi
   - hddtemp
   - htop
   - iotop
@@ -22,6 +30,7 @@ yum_packages:
   - tmux
   - tree
   - vim
+  - vlc
   - weechat
   - xclip
   - zsh
