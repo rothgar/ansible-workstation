@@ -1,0 +1,8 @@
+---
+# gnome variables
+
+gsettings:
+  key: org.gnome.desktop.interface.icon-theme
+    value: Faenza-Darker
+  key: org.gnome.desktop.interface.clock-show-date
+    value: true

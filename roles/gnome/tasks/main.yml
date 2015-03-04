@@ -1,0 +1,8 @@
+---
+# roles/common/tasks/main.yml
+# requires gsettings module
+
+- name: display clock date
+  gsetting: user={{ ansible_ssh_user }}
+    key=org.gnome.desktop.interface.clock-show-date
+    value=true
