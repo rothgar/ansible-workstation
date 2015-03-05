@@ -3,10 +3,11 @@
   sudo: True
   vars_files:
     - "roles/common/vars/main.yml"
-    - "roles/{{ ansible_distribution }}/vars/{{ ansible_distribution_version }}.yml"
+    - "roles/{{ ansible_distribution | lower }}/vars/{{ ansible_distribution_version }}.yml"
   roles:
     - common
-    - { role: Fedora, when: "ansible_distribution == 'Fedora'" }
-    - { role: Ubuntu, when: "ansible_distribution == 'Ubuntu'" }
+    - { role: fedora, when: "ansible_distribution == 'Fedora'" }
+    - { role: ubuntu, when: "ansible_distribution == 'Ubuntu'" }
+    - { role: gnome, when: "DESKTOP_SESSION == 'gnome'", tags: ["gnome"] }
     - { role: valentinogagliardi.sysdig, tags: ["sysdig"] }
     - { role: "angstwad.docker_ubuntu", when: "ansible_distribution == 'Ubuntu'" }
