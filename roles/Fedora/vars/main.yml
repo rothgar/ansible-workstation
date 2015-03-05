@@ -27,6 +27,7 @@ yum_packages:
   - remmina-plugins-gnome
   - rubygems
   - sshfs
+  - shutter
   - tmux
   - tree
   - vim
