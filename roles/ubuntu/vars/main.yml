@@ -1,5 +1,6 @@
 ---
 apt_packages:
+  - ack
   - ansible
   - autokey-gtk
   - build-essential

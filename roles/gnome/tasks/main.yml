@@ -6,3 +6,8 @@
   gsetting: user={{ ansible_ssh_user }}
     key=org.gnome.desktop.interface.clock-show-date
     value=true
+
+- name: enable tap to click
+  gsetting: user={{ ansible_ssh_user }}
+    key=org.gnome.settings-daemon.peripherals.touchpad.tap-to-click
+    value=true

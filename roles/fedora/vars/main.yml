@@ -1,7 +1,9 @@
 ---
 yum_packages:
+# rpm fusion repos
   - http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_distribution_version }}.noarch.rpm
   - http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_distribution_version }}.noarch.rpm
+  - ack
   - ansible
   - autokey-gtk
   - curl
@@ -35,3 +37,7 @@ yum_packages:
   - weechat
   - xclip
   - zsh
+services:
+  - name: sshd
+    status: running
+    enabled: True
