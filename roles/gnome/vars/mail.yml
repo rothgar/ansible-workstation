@@ -8,3 +8,9 @@ gsettings:
     value: true
   keys: org.gnome.desktop.wm.preferences.mouse-button-modifier
     value: '<alt>'
+  keys: org.gnome.Terminal.Legacy.Settings.default-show-menubar
+    value: false
+  keys: org.gnome.system.location.enabled
+    value: true
+  keys: org.gnome.system.location.max-accuracy-level
+    value: street
