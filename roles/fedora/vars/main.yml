@@ -8,6 +8,7 @@ yum_packages:
   - autokey-gtk
   - curl
   - dconf-editor
+  - docker-io
   - git
   - glances
   - gnome-tweak-tool
