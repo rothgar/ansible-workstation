@@ -1,0 +1,22 @@
+---
+# gnome variables
+
+gsettings:
+  theme:
+    key: org.gnome.desktop.interface.icon-theme
+    value: Faenza-Darker
+  clock-date:
+    key: org.gnome.desktop.interface.clock-show-date
+    value: true
+  mouse-modifier:
+    key: org.gnome.desktop.wm.preferences.mouse-button-modifier
+    value: '<alt>'
+  show-menubar:
+    key: org.gnome.Terminal.Legacy.Settings.default-show-menubar
+    value: false
+  enable-location:
+    key: org.gnome.system.location.enabled
+    value: true
+  max-location-accuracy:
+    key: org.gnome.system.location.max-accuracy-level
+    value: street

@@ -2,12 +2,8 @@
 # roles/common/tasks/main.yml
 # requires gsettings module
 
-- name: display clock date
-  gsetting: user={{ ansible_ssh_user }}
-    key=org.gnome.desktop.interface.clock-show-date
-    value=true
-
-- name: enable tap to click
-  gsetting: user={{ ansible_ssh_user }}
-    key=org.gnome.settings-daemon.peripherals.touchpad.tap-to-click
-    value=true
+- name: Change dconf settings
+  gsetting: "user={{ ansible_ssh_user }}
+    key={{ item.value.key }}
+    value={{ item.value.value }}"
+  with_dict: gsettings
