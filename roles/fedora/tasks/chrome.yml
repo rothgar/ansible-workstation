@@ -1,0 +1,9 @@
+---
+- rpm_key: key=https://dl-ssl.google.com/linux/linux_signing_key.pub state=present
+
+- copy: src=google-chrome.repo 
+    dest=/etc/yum.repos.d/google-chrome.repo
+    owner=root group=root mode=644
+
+- name: Install Google Chrome
+  yum: pkg=google-chrome-stable state=installed

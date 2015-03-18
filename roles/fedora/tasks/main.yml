@@ -1,6 +1,8 @@
 ---
 # roles/common/tasks/fedora.yml
 
+- include: chrome.yml
+
 - name: Install yum packages
   yum: name={{ item }} state=present
   with_items: yum_packages
