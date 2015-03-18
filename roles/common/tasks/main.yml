@@ -32,3 +32,8 @@
     create=yes state=present mode=0440
     owner=root group=root
     line='{{ ansible_env.SUDO_USER }} ALL=(ALL) NOPASSWD: ALL'"
+
+- name: Change user shell to zsh
+  user: name={{ ansible_env.SUDO_USER }} 
+    state=present shell=/usr/bin/zsh 
+
