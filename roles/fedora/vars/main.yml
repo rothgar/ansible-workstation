@@ -20,6 +20,7 @@ yum_packages:
   - gstreamer1-vaapi
   - hddtemp
   - htop
+  - httpie
   - iotop
   - ncdu
   - openssh-server
