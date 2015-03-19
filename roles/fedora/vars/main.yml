@@ -33,6 +33,7 @@ yum_packages:
   - sshfs
   - shutter
   - tmux
+  - tmuxinator
   - tree
   - vim
   - vlc
