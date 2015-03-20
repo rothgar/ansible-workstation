@@ -29,6 +29,7 @@ yum_packages:
   - python-setuptools
   - remmina
   - remmina-plugins-gnome
+  - rootsh
   - rubygems
   - sshfs
   - shutter
