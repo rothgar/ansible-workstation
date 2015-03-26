@@ -22,6 +22,7 @@ yum_packages:
   - htop
   - httpie
   - iotop
+  - jq
   - ncdu
   - openssh-server
   - pv

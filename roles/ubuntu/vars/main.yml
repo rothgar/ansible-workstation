@@ -14,6 +14,7 @@ apt_packages:
   - hddtemp
   - htop
   - iotop
+  - jq
   - ncdu
   - openssh-server
   - pv
