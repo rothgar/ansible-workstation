@@ -23,6 +23,7 @@ yum_packages:
   - httpie
   - iotop
   - jq
+  - mosh
   - ncdu
   - openssh-server
   - pv
