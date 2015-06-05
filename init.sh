@@ -1,6 +1,6 @@
 #!/bin/bash
-REPO="git@github.com:rothgar/ansible-workstation.git"
-CLONE_DIR=/home/"${SUDO_USER}"/src/ansible-workstation
+REPO=${REPO:-git@github.com:rothgar/ansible-workstation.git}
+CLONE_DIR=${CLONE_DIR:-/home/"${SUDO_USER}"/src/ansible-workstation}
 
 # install initial packages
 yum install -y ansible git zsh
