@@ -1,5 +1,5 @@
 ---
-- hosts: "{{ host | default('local') }}"
+- hosts: "{{ host | default('localhost') }}"
   sudo: True
   vars_files:
     - "roles/common/vars/main.yml"
@@ -9,5 +9,5 @@
     - { role: fedora, when: "ansible_distribution == 'Fedora'" }
     - { role: ubuntu, when: "ansible_distribution == 'Ubuntu'" }
     - { role: gnome, tags: ["gnome"] }
-    - { role: valentinogagliardi.sysdig, tags: ["sysdig"] }
+    - { role: valentinogagliardi.sysdig, tags: ["sysdig"], when: "ansible_distribution != 'Fedora'" }
     - { role: "angstwad.docker_ubuntu", when: "ansible_distribution == 'Ubuntu'" }

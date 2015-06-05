@@ -2,4 +2,5 @@
 yum_22_packages:
   - docker
   - fuse-sshfs
+  - sysdig
   - vim-enhanced
