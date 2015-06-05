@@ -8,7 +8,6 @@ yum_packages:
   - autokey-gtk
   - curl
   - dconf-editor
-  - docker-io
   - git
   - glances
   - gnome-tweak-tool
@@ -34,12 +33,11 @@ yum_packages:
   - remmina-plugins-gnome
   - rootsh
   - rubygems
-  - sshfs
   - shutter
+  - the_silver_searcher
   - tmux
   - tmuxinator
   - tree
-  - vim
   - vlc
   - weechat
   - xclip

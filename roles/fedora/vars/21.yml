@@ -1,0 +1,5 @@
+---
+yum_21_packages:
+  - docker-io
+  - sshfs
+  - vim
