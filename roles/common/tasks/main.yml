@@ -2,22 +2,25 @@
 # roles/common/tasks/main.yml
 
 - name: Clone my dotfiles
-  git: repo={{ dotfiles.repo }} dest=/home/{{ ansible_env.SUDO_USER }}/.dotfiles
+  git: repo={{ dotfiles.repo }} dest=/home/{{ ansible_env.USERNAME }}/.dotfiles
     recursive=yes accept_hostkey=yes update=yes track_submodules=yes
+  ignore_errors: yes
   sudo: no
 
 - name: Set dotfiles ownership
-  file: path=/home/{{ ansible_env.SUDO_USER }}/.dotfiles recurse=yes
-    owner={{ ansible_env.SUDO_USER }} group={{ ansible_env.SUDO_USER }}
+  file: path=/home/{{ ansible_env.USERNAME }}/.dotfiles recurse=yes
+    owner={{ ansible_env.USERNAME }} group={{ ansible_env.USERNAME }}
 
 - name: Create zprezto symlinks
-  shell: /home/{{ ansible_env.SUDO_USER }}/.dotfiles/init/zprezto-install.sh
-    creates=/home/{{ ansible_env.SUDO_USER }}/.dotfiles/src/.zshrc
+  shell: /home/{{ ansible_env.USERNAME }}/.dotfiles/init/zprezto-install.sh
+  args:
+    creates: "/home/{{ ansible_env.USERNAME }}/.dotfiles/src/.zshrc"
   sudo: no
 
 - name: Create dotfiles symlinks
-  shell: /home/{{ ansible_env.SUDO_USER }}/.dotfiles/init/dotfiles-install.sh
-    creates=/home/{{ ansible_env.SUDO_USER }}/.zshenv
+  shell: /home/{{ ansible_env.USERNAME }}/.dotfiles/init/dotfiles-install.sh
+  args:
+    creates: /home/{{ ansible_env.USERNAME }}/.zshenv
   sudo: no
 
 - name: Install pip (if needed)
@@ -31,9 +34,9 @@
   lineinfile: "dest=/etc/sudoers.d/{{ ansible_env.SUDO_USER }} 
     create=yes state=present mode=0440
     owner=root group=root
-    line='{{ ansible_env.SUDO_USER }} ALL=(ALL) NOPASSWD: ALL'"
+    line='{{ ansible_env.USERNAME }} ALL=(ALL) NOPASSWD: ALL'"
 
 - name: Change user shell to zsh
-  user: name={{ ansible_env.SUDO_USER }} 
+  user: name={{ ansible_env.USERNAME }} 
     state=present shell=/usr/bin/zsh 
 
