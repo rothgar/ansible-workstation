@@ -24,6 +24,7 @@ yum_packages:
   - iotop
   - jq
   - mosh
+  - petit
   - ncdu
   - openssh-server
   - pv
