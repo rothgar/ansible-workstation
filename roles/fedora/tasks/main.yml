@@ -5,7 +5,14 @@
 
 - name: Install yum packages
   yum: name={{ item }} state=present
-  with_items: yum_packages
+  with_items: yum_packages + yum_{{ ansible_distribution_major_version }}_packages
+  when: ansible_distribution_major_version|int < 22
+  tags: pkg
+
+- name: Install dnf packages
+  dnf: name={{ item }} state=present
+  with_items: yum_packages + yum_{{ ansible_distribution_major_version }}_packages
+  when: ansible_distribution_major_version|int >= 22
   tags: pkg
 
 - name: Update and upgrade system
