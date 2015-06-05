@@ -1,5 +1,5 @@
 ---
-- hosts: "{{ host | default('localhost') }}"
+- hosts: "{{ host | default('local') }}"
   sudo: True
   vars_files:
     - "roles/common/vars/main.yml"
