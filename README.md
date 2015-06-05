@@ -23,4 +23,5 @@ You can set up a system completely from scratch using the init.sh script. By def
 ```
 export REPO=http://path/to/your/ansible/repo
 export CLONE_DIR=/where/you/want/files
-curl -k -L https://raw.githubusercontent.com/rothgar/ansible-workstation/master/init.sh | sudo bash```
+curl -k -L https://raw.githubusercontent.com/rothgar/ansible-workstation/master/init.sh | sudo bash
+```
