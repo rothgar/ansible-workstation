@@ -7,6 +7,12 @@ Add desired software installs to roles/common/vars/main.yml
 
 Or use one of the specific fedora/ubuntu/gnome folders to tweek settings.
 
+### Compatibility
+
+Should work with Ubuntu 14.04, 14.10 and Fedora 21, 22.
+
+It should be modular enough to adapt to newer versions and derivatives (Linux Mint, RedHat)
+
 ### Usage
 
 Add your own hosts file or run locally with
