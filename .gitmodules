@@ -1,0 +1,6 @@
+[submodule "roles/valentinogagliardi.sysdig"]
+	path = roles/valentinogagliardi.sysdig
+	url = https://github.com/valentinogagliardi/sysdig.git
+[submodule "roles/angstwad.docker_ubuntu"]
+	path = roles/angstwad.docker_ubuntu
+	url = https://github.com/angstwad/docker.ubuntu.git
