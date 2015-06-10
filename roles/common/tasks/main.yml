@@ -20,7 +20,7 @@
 - name: Create dotfiles symlinks
   shell: /home/{{ ansible_env.USERNAME }}/.dotfiles/init/dotfiles-install.sh
   args:
-    creates: /home/{{ ansible_env.USERNAME }}/.zshenv
+    creates: "{{ ansible_user_dir }}/.vimrc"
   sudo: no
 
 - name: Install pip (if needed)
