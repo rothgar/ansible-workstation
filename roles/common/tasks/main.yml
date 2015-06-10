@@ -14,7 +14,7 @@
 - name: Create zprezto symlinks
   shell: /home/{{ ansible_env.USERNAME }}/.dotfiles/init/zprezto-install.sh
   args:
-    creates: "/home/{{ ansible_env.USERNAME }}/.dotfiles/src/.zshrc"
+    creates: "{{ ansible_user_dir }}/.dotfiles/src/.zshrc"
   sudo: no
 
 - name: Create dotfiles symlinks
