@@ -26,6 +26,7 @@ yum_packages:
   - petit
   - ncdu
   - openssh-server
+  - pm-utils
   - pv
   - glances
   - python-setuptools

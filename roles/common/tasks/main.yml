@@ -36,6 +36,7 @@
     owner=root group=root
     line='{{ ansible_env.USERNAME }} ALL=(ALL) NOPASSWD: ALL'"
 
+- debug: msg="USERNAME {{ ansible_env.USERNAME }}"
 - name: Change user shell to zsh
   user: name={{ ansible_env.USERNAME }} 
     state=present shell=/usr/bin/zsh 
