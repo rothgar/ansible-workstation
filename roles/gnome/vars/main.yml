@@ -29,3 +29,6 @@ gsettings:
   favorite-apps:
     key: org.gnome.shell.favorite-apps
     value: '["google-chrome.desktop", "firefox.desktop", "org.gnome.Nautilus.desktop", "org.gnome.Terminal.desktop"]'
+  xkb-options
+   org.gnome.desktop.input-sources.xkb-options
+    value: '["caps:swapescape","terminate:ctrl_alt_bksp","altwin:swap_alt_win"]'

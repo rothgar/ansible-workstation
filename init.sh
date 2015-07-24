@@ -4,7 +4,7 @@ REPO=${REPO:-https://github.com/rothgar/ansible-workstation.git}
 CLONE_DIR=${CLONE_DIR:-/home/"${SUDO_USER}"/src/ansible-workstation}
 
 # install initial packages
-yum install -y ansible git zsh
+yum install -y vim ansible git zsh
 
 # clone this repo
 mkdir -p "${CLONE_DIR}"
