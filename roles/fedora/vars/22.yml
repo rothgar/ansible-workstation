@@ -3,3 +3,4 @@ yum_22_packages:
   - docker
   - fuse-sshfs
   - vim-enhanced
+  - tmuxinator

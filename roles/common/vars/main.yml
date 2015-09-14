@@ -5,9 +5,6 @@ pip_packages:
   - virtualenv
   - ps_mem
 
-gem_packages:
-  - tmuxinator
-
 dotfiles: {
   "repo": "https://github.com/rothgar/dotfiles.git",
   "host": "www.github.com",
