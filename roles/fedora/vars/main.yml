@@ -38,6 +38,7 @@ yum_packages:
   - the_silver_searcher
   - tmux
   - tmuxinator
+  - tsocks
   - tree
   - vlc
   - weechat
