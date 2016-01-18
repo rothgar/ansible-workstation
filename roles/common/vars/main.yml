@@ -3,6 +3,7 @@ pip_packages:
   - beets
   - mps-youtube
   - virtualenv
+  - ps_mem
 
 gem_packages:
   - tmuxinator
