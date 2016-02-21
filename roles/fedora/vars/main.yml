@@ -35,6 +35,7 @@ yum_packages:
   - rootsh
   - rubygems
   - shutter
+  - system-storage-manager
   - the_silver_searcher
   - tmux
   - tmuxinator
