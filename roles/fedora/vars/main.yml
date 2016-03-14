@@ -10,6 +10,7 @@ yum_packages:
   - dconf-editor
   - git
   - glances
+  - golang
   - gnome-tweak-tool
   - gstreamer1-libav
   - gstreamer1-plugins-bad-freeworld 
@@ -28,7 +29,6 @@ yum_packages:
   - openssh-server
   - pm-utils
   - pv
-  - glances
   - python-setuptools
   - remmina
   - remmina-plugins-gnome
