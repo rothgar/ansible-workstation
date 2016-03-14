@@ -19,7 +19,6 @@
   shell: go get -u {{ item }}
   with_items: go_binaries
   environment: go_env
-  become: no
 
 - name: Update and upgrade system
   yum: name=* state=latest
