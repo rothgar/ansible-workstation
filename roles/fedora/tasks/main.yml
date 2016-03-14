@@ -15,6 +15,12 @@
   when: ansible_distribution_major_version|int >= 22
   tags: pkg
 
+- name: Install go packages
+  shell: go get -u {{ item }}
+  with_items: go_binaries
+  environment: go_env
+  become: no
+
 - name: Update and upgrade system
   yum: name=* state=latest
   tags: update

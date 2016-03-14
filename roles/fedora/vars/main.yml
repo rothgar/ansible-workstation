@@ -49,3 +49,7 @@ services:
   - name: sshd
     status: running
     enabled: True
+go_env:
+  GOPATH: "/home/{{ ansible_env.USERNAME }}"
+go_binaries:
+  - github.com/moul/advanced-ssh-config/cmd/assh
