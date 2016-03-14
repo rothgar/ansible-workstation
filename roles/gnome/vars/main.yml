@@ -32,3 +32,6 @@ gsettings:
   xkb-options:
     key: org.gnome.desktop.input-sources.xkb-options
     value: '["caps:swapescape","terminate:ctrl_alt_bksp","altwin:swap_alt_win"]'
+  disable-ambient-light:
+    key: org.gnome.settings-daemon.plugins.power.ambient-enabled
+    value: false
