@@ -1,6 +1,5 @@
 ---
-yum_22_packages:
-  - docker
+yum_23_packages:
+  - docker-engine
   - fuse-sshfs
   - vim-enhanced
-  - tmuxinator
