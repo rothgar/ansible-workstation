@@ -24,9 +24,10 @@ yum_packages:
   - iotop
   - jq
   - mosh
-  - petit
+  - nautilus-open-terminal
   - ncdu
   - openssh-server
+  - petit
   - pm-utils
   - pv
   - python-setuptools
