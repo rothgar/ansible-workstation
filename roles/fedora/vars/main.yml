@@ -9,6 +9,7 @@ yum_packages:
   - curl
   - dconf-editor
   - git
+  - git-extras
   - glances
   - golang
   - gnome-tweak-tool
