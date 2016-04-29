@@ -3,3 +3,4 @@ yum_23_packages:
   - docker-engine
   - fuse-sshfs
   - vim-enhanced
+  - gnomebaker
