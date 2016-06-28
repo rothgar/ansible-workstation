@@ -7,4 +7,4 @@
     owner=root group=root mode=644
 
 - name: Install Google Chrome
-  yum: pkg=google-chrome-stable state=installed
+  dnf: pkg=google-chrome-stable state=installed
