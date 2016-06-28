@@ -1,8 +1,6 @@
 ---
 yum_packages:
 # rpm fusion repos
-  - http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_distribution_version }}.noarch.rpm
-  - http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_distribution_version }}.noarch.rpm
   - ack
   - ansible
   - autokey-gtk
@@ -13,12 +11,8 @@ yum_packages:
   - glances
   - golang
   - gnome-tweak-tool
-  - gstreamer1-libav
-  - gstreamer1-plugins-bad-freeworld 
-  - gstreamer1-plugins-good 
   - gstreamer-plugins-bad-free 
   - gstreamer-plugin-crystalhd 
-  - gstreamer1-vaapi
   - hddtemp
   - htop
   - httpie
@@ -29,7 +23,6 @@ yum_packages:
   - ncdu
   - openssh-server
   - petit
-  - pm-utils
   - pv
   - python-setuptools
   - remmina
@@ -43,10 +36,15 @@ yum_packages:
   - tmuxinator
   - tsocks
   - tree
-  - vlc
   - weechat
   - xclip
   - zsh
+rpmfusion_packages:
+  - gstreamer1-libav
+  - gstreamer1-plugins-bad-freeworld
+  - gstreamer1-plugins-good
+  - gstreamer1-vaapi
+  - vlc
 services:
   - name: sshd
     status: running
