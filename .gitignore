@@ -3,3 +3,4 @@ hosts
 
 # temp vim files
 *.swp
+*.retry
