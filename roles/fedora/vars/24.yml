@@ -1,5 +1,5 @@
 ---
-yum_23_packages:
+yum_24_packages:
   - docker-engine
   - fuse-sshfs
   - vim-enhanced
