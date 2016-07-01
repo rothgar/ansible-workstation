@@ -15,3 +15,9 @@ git clone --recursive "${REPO}" "${CLONE_DIR}"
 chown -R ${SUDO_USER}.${SUDO_USER} ${CLONE_DIR}
 
 ANSIBLE_NOCOWS=1 ansible-playbook -u ${SUDO_USER} -i "${CLONE_DIR}"/hosts.template "${CLONE_DIR}"/main.yml
+
+# Install and update vundle
+# This should probably be moved to ansible
+mkdir -p ~/.vim/bundle
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim +PluginInstall +qall
