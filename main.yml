@@ -9,4 +9,6 @@
     - { role: fedora, when: "ansible_distribution == 'Fedora'" }
     - { role: ubuntu, when: "ansible_distribution == 'Ubuntu'" }
     - { role: gnome, tags: ["gnome"] }
+      become: yes
+      become_user: {{ ansible_env.SUDO_USER }}
     - { role: "angstwad.docker_ubuntu", when: "ansible_distribution == 'Ubuntu'" }
