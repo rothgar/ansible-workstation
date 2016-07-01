@@ -35,3 +35,21 @@ gsettings:
   disable-ambient-light:
     key: org.gnome.settings-daemon.plugins.power.ambient-enabled
     value: false
+  terminal-disable-menubar:
+    key: org.gnome.Terminal.Legacy.Settings.default-show-menubar
+    value: false
+  terminal-default-theme:
+    key: org.gnome.Terminal.Legacy.Settings.theme-variant
+    value: 'dark'
+  terminal-mnemonics:
+    key: org.gnome.Terminal.Legacy.Settings.mnemonics-enabled
+    value: true
+  disable-animantions:
+    key: org.gnome.desktop.interface.enable-animations
+    value: false
+  show-battery-percentage:
+    key: org.gnome.desktop.interface.show-battery-percentage
+    value: true
+  show-cursor:
+    key: org.gnome.settings-daemon.peripherals.mouse.locate-pointer
+    value: true
