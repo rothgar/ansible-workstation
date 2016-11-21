@@ -28,7 +28,8 @@
 
 - name: Install pip packages
   pip: name={{ item }} state=latest
-  with_items: pip_packages
+  with_items:
+    - "{{ pip_packages }}"
 
 - name: NOPASSWD sudo
   lineinfile: "dest=/etc/sudoers.d/{{ ansible_env.SUDO_USER }} 
