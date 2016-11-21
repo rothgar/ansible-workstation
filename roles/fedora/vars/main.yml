@@ -11,8 +11,6 @@ yum_packages:
   - glances
   - golang
   - gnome-tweak-tool
-  - gstreamer-plugins-bad-free 
-  - gstreamer-plugin-crystalhd 
   - hddtemp
   - htop
   - httpie
@@ -41,7 +39,7 @@ yum_packages:
   - zsh
 rpmfusion_packages:
   - gstreamer1-libav
-  - gstreamer1-plugins-bad-freeworld
+  - gstreamer1-plugins-bad
   - gstreamer1-plugins-good
   - gstreamer1-vaapi
   - vlc
