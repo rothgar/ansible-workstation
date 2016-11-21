@@ -3,21 +3,33 @@
 
 - include: chrome.yml
 
-- name: Install yum packages
-  yum: name={{ item }} state=present
-  with_items: yum_packages + yum_{{ ansible_distribution_major_version }}_packages
-  when: ansible_distribution_major_version|int < 22
-  tags: pkg
+- name: Add epel
+  yum_repository:
+    name: epel
+    baseurl: http://download.fedoraproject.org/pub/epel/$releasever/$basearch/
+
+- name: Add rpmfusion
+  yum_repository:
+    name: rpmfusion-free
+    mirrorlist: http://mirrors.rpmfusion.org/mirrorlist?repo=free-fedora-$releasever&arch=$basearch
+    file: rpmfusion-free
+    gpgcheck: yes
+    gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-free-fedora-$releasever
 
 - name: Install dnf packages
-  dnf: name={{ item }} state=present
-  with_items: yum_packages + yum_{{ ansible_distribution_major_version }}_packages
+  dnf: name={{ item }} state=present update_cache=yes
+  with_items: 
+    - "{{ yum_packages }}"
+    - "{{ yum_24_packags }}"
+    - "{{ rpmfusion_packages }}"
   when: ansible_distribution_major_version|int >= 22
   tags: pkg
 
 - name: Install go packages
   shell: go get -u {{ item }}
-  with_items: go_binaries
+  with_items: "{{ go_binaries }}"
+  become: yes
+  become_user: "{{ ansible_env.SUDO_USER }}"
   environment: go_env
 
 - name: Update and upgrade system
