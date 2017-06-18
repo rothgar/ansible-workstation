@@ -25,26 +25,21 @@
     insertafter: EOF
     line: /usr/local/bin/dynmotd
 
-- name: Add epel
-  yum_repository:
-    name: epel
-    description: EPEL YUM Repository
-    baseurl: http://download.fedoraproject.org/pub/epel/$releasever/$basearch/
+- name: Add rpmfusion free
+  dnf:
+    name: "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_lsb.major_release }}.noarch.rpm"
+    state: present
 
-- name: Add rpmfusion
-  yum_repository:
-    name: rpmfusion-free
-    description: RPMfusion YUM Repository
-    mirrorlist: http://mirrors.rpmfusion.org/mirrorlist?repo=free-fedora-$releasever&arch=$basearch
-    file: rpmfusion-free
-    gpgcheck: yes
-    gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-free-fedora-$releasever
+- name: Add rpmfusion none free
+  dnf:
+    name: "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_lsb.major_release }}.noarch.rpm"
+    state: present
 
 - name: Install dnf packages
   dnf: name={{ item }} state=present 
   with_items: 
     - "{{ yum_packages }}"
-    - "{{ yum_24_packages }}"
+    - "{{ yum_26_packages }}"
     - "{{ rpmfusion_packages }}"
   when: ansible_distribution_major_version|int >= 22
   tags: pkg
@@ -57,6 +52,6 @@
   environment: go_env
 
 - name: Update and upgrade system
-  yum: name=* state=latest
+  dnf: name=* state=latest
   tags: update
   ignore_errors: yes

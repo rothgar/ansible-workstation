@@ -3,8 +3,7 @@
 # requires gsettings module
 
 - name: Change dconf settings
-  gsetting: "user={{ ansible_env.SUDO_USER }}
-    key={{ item.value.key }}
-    value={{ item.value.value }}"
+  dconf: key={{ item.value.key }}
+    value={{ item.value.value }}
   with_dict: "{{ gsettings }}"
   ignore_errors: true

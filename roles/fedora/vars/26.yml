@@ -1,0 +1,6 @@
+---
+yum_26_packages:
+  - docker-engine
+  - fuse-sshfs
+  - vim-enhanced
+  - gnomebaker

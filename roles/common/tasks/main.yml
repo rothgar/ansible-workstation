@@ -5,7 +5,7 @@
   git: repo={{ dotfiles.repo }} dest=/home/{{ ansible_env.USERNAME }}/.dotfiles
     recursive=yes accept_hostkey=yes update=yes track_submodules=yes
   ignore_errors: yes
-  sudo: no
+  become: false
 
 - name: Set dotfiles ownership
   file: path=/home/{{ ansible_env.USERNAME }}/.dotfiles recurse=yes
@@ -15,13 +15,13 @@
   shell: /home/{{ ansible_env.USERNAME }}/.dotfiles/init/zprezto-install.sh
   args:
     creates: "{{ ansible_user_dir }}/.dotfiles/src/.zshrc"
-  sudo: no
+  become: false
 
 - name: Create dotfiles symlinks
   shell: /home/{{ ansible_env.USERNAME }}/.dotfiles/init/dotfiles-install.sh
   args:
     creates: "{{ ansible_user_dir }}/.vimrc"
-  sudo: no
+  become: false
 
 - name: Install pip (if needed)
   easy_install: name=pip
@@ -37,7 +37,6 @@
     owner=root group=root
     line='{{ ansible_env.USERNAME }} ALL=(ALL) NOPASSWD: ALL'"
 
-- debug: msg="USERNAME {{ ansible_env.USERNAME }}"
 - name: Change user shell to zsh
   user: name={{ ansible_env.USERNAME }} 
     state=present shell=/usr/bin/zsh 
