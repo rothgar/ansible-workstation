@@ -1,0 +1,10 @@
+---
+- rpm_key: key=https://download.docker.com/linux/fedora/gpg
+    state=present
+
+- copy: src=docker-ce.repo 
+    dest=/etc/yum.repos.d/docker-ce.repo
+    owner=root group=root mode=644
+
+- name: Install Docker CE
+  dnf: pkg=docker-ce state=installed

@@ -1,6 +1,6 @@
 ---
 yum_26_packages:
-  - docker-engine
+  - dnf-plugins-core
   - fuse-sshfs
   - vim-enhanced
   - gnomebaker

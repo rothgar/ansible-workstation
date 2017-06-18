@@ -2,6 +2,9 @@
 # roles/common/tasks/fedora.yml
 
 - include: chrome.yml
+- include: docker.yml
+  tags: 
+    - docker
 
 - name: disable static motd file
   lineinfile:
