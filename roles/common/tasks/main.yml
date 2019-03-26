@@ -15,12 +15,14 @@
   shell: /home/{{ ansible_env.USERNAME }}/.dotfiles/init/zprezto-install.sh
   args:
     creates: "{{ ansible_user_dir }}/.dotfiles/src/.zshrc"
+  ignore_errors: yes
   become: false
 
 - name: Create dotfiles symlinks
   shell: /home/{{ ansible_env.USERNAME }}/.dotfiles/init/dotfiles-install.sh
   args:
     creates: "{{ ansible_user_dir }}/.vimrc"
+  ignore_errors: yes
   become: false
 
 - name: Install pip (if needed)
