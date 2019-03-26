@@ -6,6 +6,7 @@ yum_packages:
   - autokey-gtk
   - curl
   - dconf-editor
+  - direnv
   - git
   - git-extras
   - glances
@@ -45,7 +46,6 @@ services:
   - name: sshd
     status: running
     enabled: True
-go_env:
-  GOPATH: "/home/{{ ansible_env.USERNAME }}"
-go_binaries:
-  - github.com/moul/advanced-ssh-config/cmd/assh
+  - name: docker
+    status: running
+    enabled: True
