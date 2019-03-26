@@ -1,0 +1,6 @@
+---
+yum_29_packages:
+  - dnf-plugins-core
+  - fuse-sshfs
+  - vim-enhanced
+  - gnomebaker
