@@ -3,7 +3,7 @@
 
 - include: chrome.yml
 - include: docker.yml
-  tags: 
+  tags:
     - docker
 
 - name: disable static motd file
@@ -30,29 +30,23 @@
 
 - name: Add rpmfusion free
   dnf:
-    name: "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_lsb.major_release }}.noarch.rpm"
+    name: "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_distribution_major_version }}.noarch.rpm"
     state: present
 
 - name: Add rpmfusion none free
   dnf:
-    name: "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_lsb.major_release }}.noarch.rpm"
+    name: "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_distribution_major_version }}.noarch.rpm"
     state: present
 
 - name: Install dnf packages
-  dnf: name={{ item }} state=present 
-  with_items: 
+  dnf: name={{ item }} state=present
+  with_items:
     - "{{ yum_packages }}"
-    - "{{ yum_26_packages }}"
+    - "yum_{{ ansible_distribution_major_version }}_packages"
     - "{{ rpmfusion_packages }}"
   when: ansible_distribution_major_version|int >= 22
+  ignore_errors: true
   tags: pkg
-
-- name: Install go packages
-  shell: go get -u {{ item }}
-  with_items: "{{ go_binaries }}"
-  become: yes
-  become_user: "{{ ansible_env.SUDO_USER }}"
-  environment: go_env
 
 - name: Update and upgrade system
   dnf: name=* state=latest
